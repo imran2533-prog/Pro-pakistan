@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Pakistan Recovery Oasis | Our Expert Team</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- <link rel="icon" type="image/jpg" href="./Images/favv.jpg"> -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Scripts & Fonts -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- Tailwind Configuration -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#043102",
+                        "accent-gold": "#F9A825",
+                        "background-light": "#f6f8f5",
+                        "background-dark": "#102210",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(4, 49, 2, 0.1);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(4, 49, 2, 0.85), rgba(4, 49, 2, 0.6));
+        }
+
+        .gold-border-gradient {
+            border: 3px solid #F9A825;
+        }
+
+        .service-card:hover .icon-glow {
+            text-shadow: 0 0 15px rgba(4, 49, 2, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* ===== DOCTOR NAME TAG ===== */
+        .name-tag {
+            display: inline-block;
+            background: rgba(4, 49, 2, 0.75);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border-radius: 6px;
+            padding: 2px 8px;
+        }
+
+        /* ===== FOOTER ===== */
+        .pro-footer {
+            background: #043102;
+            color: #d1fae5;
+            font-family: 'Poppins', sans-serif;
+            padding: 60px 0 0;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .footer-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+            gap: 40px;
+        }
+        @media (max-width: 900px) {
+            .footer-row { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 580px) {
+            .footer-row { grid-template-columns: 1fr; }
+        }
+        .footer-logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #F9A825;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 14px;
+            letter-spacing: 2px;
+        }
+        .footer-col p {
+            font-size: 0.88rem;
+            line-height: 1.7;
+            color: #a7f3d0;
+            margin-bottom: 18px;
+        }
+        .footer-socials {
+            display: flex;
+            gap: 10px;
+        }
+        .footer-socials a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #F9A825;
+            font-size: 0.9rem;
+            transition: background 0.3s, transform 0.3s;
+            text-decoration: none;
+        }
+        .footer-socials a:hover {
+            background: #F9A825;
+            color: #043102;
+            transform: translateY(-3px);
+        }
+        .footer-col h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #F9A825;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        .footer-col ul li a {
+            color: #a7f3d0;
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: color 0.3s;
+        }
+        .footer-col ul li a:hover { color: #F9A825; }
+        .contact-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: #a7f3d0;
+            font-size: 0.85rem;
+            margin-bottom: 12px !important;
+        }
+        .contact-list li i {
+            color: #F9A825;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        .contact-list a {
+            color: #a7f3d0;
+            text-decoration: none;
+        }
+        .contact-list a:hover { color: #F9A825; }
+        .map-circle {
+            width: 100%;
+            height: 180px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid rgba(249,168,37,0.3);
+        }
+        .footer-bottom {
+            margin-top: 50px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            font-size: 0.82rem;
+            color: #6ee7b7;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .powered-by a {
+            color: #F9A825;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* ===== WHATSAPP FLOAT ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            background: #25d366;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+            z-index: 9999;
+            transition: transform 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        /* =========================
+       OUR TEAM IMAGE SECTION
+========================= */
+.our-team-section {
+    padding: 90px 0;
+    background: #f6f8f5;
+}
+
+.our-team-heading {
+    max-width: 100%;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.our-team-heading h2 {
+    color: #043102;
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+}
+
+.our-team-heading h3 {
+    color: #0f172a;
+    font-size: 42px;
+    line-height: 1.15;
+    font-weight: 800;
+    margin: 0;
+}
+
+.our-team-image-box {
+    width: 100%;
+    border-radius: 28px;
+    overflow: hidden;
+    background: #ffffff;
+    padding: 10px;
+    box-shadow: 0 24px 60px rgba(4, 49, 2, 0.14);
+    border: 1px solid rgba(4, 49, 2, 0.08);
+}
+
+.our-team-image-box img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center top;
+    display: block;
+    border-radius: 20px;
+}
+
+@media (max-width: 992px) {
+    .our-team-section {
+        padding: 70px 0;
+    }
+
+    .our-team-heading h3 {
+        font-size: 36px;
+    }
+
+    .our-team-image-box img {
+        height: auto;
+    }
+}
+
+@media (max-width: 640px) {
+    .our-team-section {
+        padding: 55px 0;
+    }
+
+    .our-team-heading {
+        margin-bottom: 30px;
+    }
+
+    .our-team-heading h3 {
+        font-size: 30px;
+    }
+
+    .our-team-image-box {
+        border-radius: 20px;
+        padding: 6px;
+    }
+
+}
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+
+    <!-- ================= NAVBAR ================= -->
+     
+    <!-- <nav class="fixed top-0 left-0 right-0 z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white">
+                    <span class="material-symbols-outlined text-2xl">eco</span>
+                </div>
+                <span class="text-xl font-bold tracking-tight text-primary">Pakistan Recovery Oasis</span>
+            </div>
+            <div class="hidden md:flex items-center gap-10">
+                <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Services</a>
+                <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Expert Team</a>
+                <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Facilities</a>
+                <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">About</a>
+                <button
+                    class="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-opacity-90 transition-all shadow-lg shadow-primary/20">
+                    Contact Us
+                </button>
+            </div>
+        </div>
+    </nav> -->
+
+    <!-- ================= HERO SECTION ================= -->
+    <!-- Added pt-28 so the content doesn't hide behind the fixed navbar -->
+  <section class="relative h-[70vh] w-full flex items-center justify-center overflow-hidden pt-28">
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+        <img alt="Compassionate healthcare professionals in a modern facility" 
+            class="w-full h-full object-cover"
+            data-alt="Modern mental health facility interior with natural light"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxVjfWLr1K6kZPsDxBJcJiyF09D6k3gokX1IsrU27B5_fxEFa--uDhytveHvDl590xSvHtKQY2quq-KxaP4VgMlBzRBCqOtowmXunKwOJDYAZs-yOzOhKmRXGmzveW60B1BfW48_8UFWBVRH9G2u3R63s-4gasz-E5w7o2a7-LUR5J5M-QKfPTwx_THzHLBHKmCmqMFJFmh6mafUmT_1uGWGsc1qktnbLQNwMH8pU7wlYDVxWDHh1EbLxgJ2nxXXioRrVmj_5rbBE" />
+        <div class="absolute inset-0 hero-gradient"></div>
+    </div>
+    
+    <!-- Main Content with Back Button -->
+    <div class="relative z-10 text-center px-6 max-w-4xl">
+        <!-- Back to Home Link - Above Title -->
+        <a href="../index.html" 
+           class="inline-flex items-center gap-2 text-white/70 hover:text-accent-gold mb-6 sm:mb-8 transition-colors duration-300 group">
+            <span class="material-symbols-outlined text-lg group-hover:-translate-x-1 transition-transform duration-300">
+                arrow_back
+            </span>
+            <span class="text-sm font-medium uppercase tracking-wider">Back to Home</span>
+        </a>
+        
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-4 sm:mb-6 tracking-tight leading-tight">
+            Our Expert Team
+        </h1>
+        <p class="text-base sm:text-lg md:text-xl text-white/90 font-medium max-w-2xl mx-auto leading-relaxed px-2">
+            Meet the compassionate professionals dedicated to your recovery journey. We combine clinical excellence
+            with holistic empathy.
+        </p>
+    </div>
+</section>
+
+    <!-- ================= LEADERSHIP SECTION ================= -->
+    <section class="py-24 max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-primary text-sm font-bold uppercase tracking-widest mb-2">Leadership</h2>
+            <h3 class="text-4xl font-extrabold">Our Visionaries</h3>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12">
+              <!-- Visionary 2 -->
+            <div
+                class="group relative bg-white p-8 rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 border border-primary/5 flex flex-col items-center text-center hover:-translate-y-2">
+                <div class="relative mb-6">
+                    <div class="w-48 h-48 rounded-full gold-border-gradient overflow-hidden p-1 shadow-lg">
+                        <img alt="Portrait of Dr. Ahmad Khan"
+                            class="w-full h-full object-fit rounded-full group-hover:scale-110 transition-transform duration-500"
+                            src="../Images/team/junaid.jpeg">
+                    </div>
+                  
+                </div>
+                <h4 class="text-2xl font-bold text-primary mb-1">JUNAID AHMAD</h4>
+                <p class="text-accent-gold font-bold mb-4">CEO & Co Founder</p>
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    National Trainer (Colombo)|<br>
+                    Addiction Counselor UTC & UPC <br>
+                    <b>Certified PGDAS (Malaysia)</b>
+                </p>
+                <button class="flex items-center gap-2 font-bold text-sm text-primary hover:text-accent-gold">
+                    <span class="material-symbols-outlined text-lg">link</span> <a href="https://www.linkedin.com/in/ahmed1junaid/">VIEW LINKEDIN PROFILE</a>
+                </button>
+            </div>
+            <!-- Visionary 1 -->
+             
+            <div
+                class="group relative bg-white p-8 rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 border border-primary/5 flex flex-col items-center text-center hover:-translate-y-2">
+                <div class="relative mb-6">
+                    <div class="w-48 h-48 rounded-full gold-border-gradient overflow-hidden p-1 shadow-lg">
+                        <img alt="Portrait of Dr. Ahmad Khan"
+                            class="w-full h-full object-fit rounded-full group-hover:scale-110 transition-transform duration-500"
+                            src="../Images/team/imran.jpeg" />
+                    </div>
+                 
+                </div>
+                <h4 class="text-2xl font-bold text-primary mb-1">Imran Hussain khan </h4>
+                <p class="text-accent-gold font-bold mb-4">CEO & Founder</p>
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    <b>MS Clinical Psychology<br>M.Sc Psychology (Gold Medalist)|</b><br>Certified CBT Practitioner
+                </p>
+                <button class="flex items-center gap-2 font-bold text-sm text-primary hover:text-accent-gold">
+                    <span class="material-symbols-outlined text-lg">link</span> <a href="https://www.linkedin.com/in/imran-hussain-khan-297b8616/">VIEW LINKEDIN PROFILE</a>
+                </button>
+            </div>
+
+          
+        </div>
+    </section>
+
+
+
+<!-- OUR TEAM SECTION -->
+<section class="our-team-section" id="our-team">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="our-team-heading">
+            <h2>Our People</h2>
+            <h3>Our Team</h3>
+        </div>
+
+
+
+    </div>
+</section>
+
+    <!-- ================= CLINICAL SPECIALISTS ================= -->
+    <section class="bg-primary/5 py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16 text-center md:text-left">
+                <h2 class="text-primary text-sm font-bold uppercase tracking-widest mb-2">Our Experts</h2>
+                <h3 class="text-4xl font-extrabold">Clinical Specialists</h3>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Specialist 1 -->
+        
+                    <div class="group rounded-2xl bg-white shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="relative aspect-[4/5] overflow-hidden">
+                        <img alt="Senior Counselor"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            src="../Images/team/new api.jpeg" />
+                    </div>
+                    <div class="p-4 border-t border-primary/10 bg-white">
+                        <h5 class="text-base font-bold text-primary">Miss Rimsha Javed </h5>
+                        <p class="text-accent-gold text-sm font-semibold mb-1">Clinical Psychologist</p>
+                        <div class="max-h-0 overflow-hidden group-hover:max-h-24 transition-all duration-500 ease-in-out">
+                            <p class="text-slate-500 text-xs pt-2 border-t border-slate-100 mt-2">
+                                MS Clinical Psychology
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Specialist 2 -->
+                <div class="group rounded-2xl bg-white shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img alt="Senior Counselor"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            src="../Images/team/afifa.jpeg" />
+                    </div>
+                    <div class="p-4 border-t border-primary/10 bg-white">
+                        <h5 class="text-base font-bold text-primary">Afia Irfan</h5>
+                        <p class="text-accent-gold text-sm font-semibold mb-1">Clinical Psychologist</p>
+                        <div class="max-h-0 overflow-hidden group-hover:max-h-24 transition-all duration-500 ease-in-out">
+                            <p class="text-slate-500 text-xs pt-2 border-t border-slate-100 mt-2">
+                                Specialist in detox management and clinical health screening
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Specialist 3 -->
+                <div class="group rounded-2xl bg-white shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img alt="Senior Counselor"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            src="../Images/team/saira.jpeg" />
+                    </div>
+                    <div class="p-4 border-t border-primary/10 bg-white">
+                        <h5 class="text-base font-bold text-primary">Saira Jabeen</h5>
+                        <p class="text-accent-gold text-sm font-semibold mb-1">Senior Clinical Psychologist</p>
+                        <div class="max-h-0 overflow-hidden group-hover:max-h-24 transition-all duration-500 ease-in-out">
+                            <p class="text-slate-500 text-xs pt-2 border-t border-slate-100 mt-2">
+                                MS Clinical Psychology
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Specialist 4 -->
+                  <div class="group rounded-xl sm:rounded-2xl bg-white shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img alt="Clinical Psychologist"
+                            class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                            src="../Images/team/zun.jpeg" />
+                    </div>
+                    <div class="p-4 border-t border-primary/10 bg-white">
+                        <h5 class="text-base font-bold text-primary">Zunaira Aslam</h5>
+                        <p class="text-accent-gold text-xs sm:text-sm font-semibold mb-1">MS Clinical Psychology</p>
+                        <div class="max-h-0 overflow-hidden group-hover:max-h-24 transition-all duration-500 ease-in-out">
+                            <p class="text-slate-500 text-[10px] sm:text-xs pt-2 border-t border-slate-100 mt-2">
+                                MS Clinical Psychology.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+   <!-- Specialist 5 -->
+
+                    <!-- <div class="group rounded-2xl bg-white shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img alt="Senior Counselor"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            src="../Images/team/tahir.jpeg" />
+                    </div>
+                    <div class="p-4 border-t border-primary/10 bg-white">
+                        <h5 class="text-base font-bold text-primary">Tahir Raza</h5>
+                        <p class="text-accent-gold text-sm font-semibold mb-1">Designation Supervisor</p>
+                        <div class="max-h-0 overflow-hidden group-hover:max-h-24 transition-all duration-500 ease-in-out">
+                            <p class="text-slate-500 text-xs pt-2 border-t border-slate-100 mt-2">
+                                MS Clinical Psychology
+                            </p>
+                        </div>
+                    </div>
+                </div> -->
+ 
+                
+            </div>
+        </div>
+    </section>
+
+   <!-- ================= SUPPORT STAFF SECTION ================= -->
+<section class="py-12 sm:py-16 md:py-20 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+        <!-- Content Side -->
+        <div class="order-2 lg:order-1">
+            <h2 class="text-primary text-xs sm:text-sm font-bold uppercase tracking-widest mb-3 sm:mb-4">
+                Dedicated Support
+            </h2>
+            <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4 sm:mb-6 lg:mb-8 leading-tight">
+                The Heart of Our Care
+            </h3>
+            <p class="text-slate-600 mb-6 sm:mb-8 lg:mb-10 leading-relaxed text-base sm:text-lg">
+                Our clinical excellence is supported by a 24/7 dedicated team ensuring every aspect of your stay is safe, comfortable, and focused on healing.
+            </p>
+            
+            <!-- Features List -->
+            <div class="space-y-4 sm:space-y-6">
+                <!-- Feature 1 -->
+                <div class="flex items-start gap-3 sm:gap-4">
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                        <span class="material-symbols-outlined text-xl sm:text-2xl">verified_user</span>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-base sm:text-lg mb-1">24/7 Nursing & Monitoring</h5>
+                        <p class="text-slate-500 text-sm sm:text-base">Round-the-clock medical supervision by registered nurses.</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="flex items-start gap-3 sm:gap-4">
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                        <span class="material-symbols-outlined text-xl sm:text-2xl">restaurant</span>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-base sm:text-lg mb-1">Nutritional Wellness Team</h5>
+                        <p class="text-slate-500 text-sm sm:text-base">Custom diet plans designed to restore physical vitality.</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="flex items-start gap-3 sm:gap-4">
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                        <span class="material-symbols-outlined text-xl sm:text-2xl">gpp_good</span>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-base sm:text-lg mb-1">Safety & Security Officers</h5>
+                        <p class="text-slate-500 text-sm sm:text-base">Providing a protected and tranquil environment for recovery.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Grid -->
+        <div class="order-1 lg:order-2 grid grid-cols-2 gap-3 sm:gap-4">
+            <!-- Left Column -->
+            <div class="space-y-3 sm:space-y-4 pt-8 sm:pt-12">
+                <!-- Staff Card 1 -->  
+                <div class="group rounded-xl sm:rounded-2xl bg-white shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img alt="Senior Counselor"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            src="../Images/team/shah.jpeg" />
+                    </div>
+                    <div class="p-4 border-t border-primary/10 bg-white">
+                        <h5 class="text-sm sm:text-base md:text-lg font-bold text-primary">Dr. Muhammad Shahzad</h5>
+                        <p class="text-accent-gold text-sm font-semibold mb-1">Medical Officer</p>
+                        <div class="max-h-0 overflow-hidden group-hover:max-h-24 transition-all duration-500 ease-in-out">
+                            <p class="text-slate-500 text-xs pt-2 border-t border-slate-100 mt-2">
+                                Ex House Physician and Surgeon Services Hospital Lahore
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column -->
+            <div class="space-y-3 sm:space-y-4">
+                <!-- Image Card -->
+                <div class="rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform duration-500">
+                    <img alt="Nutritious meals" 
+                        class="w-full h-32 sm:h-40 md:h-48 object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxVjfWLr1K6kZPsDxBJcJiyF09D6k3gokX1IsrU27B5_fxEFa--uDhytveHvDl590xSvHtKQY2quq-KxaP4VgMlBzRBCqOtowmXunKwOJDYAZs-yOzOhKmRXGmzveW60B1BfW48_8UFWBVRH9G2u3R63s-4gasz-E5w7o2a7-LUR5J5M-QKfPTwx_THzHLBHKmCmqMFJFmh6mafUmT_1uGWGsc1qktnbLQNwMH8pU7wlYDVxWDHh1EbLxgJ2nxXXioRrVmj_5rbBE" />
+                </div>
+                
+                <!-- Staff Card 2 -->
+                <div class="group rounded-xl sm:rounded-2xl bg-white shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="aspect-[3/4] overflow-hidden">
+                        <img alt="Clinical Psychologist"
+                            class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                            src="../Images/team/adnan.jpeg" />
+                    </div>
+                    <div class="p-4 border-t border-primary/10 bg-white">
+                        <h5 class="text-sm sm:text-base md:text-lg font-bold text-primary">Dr. Adnan Sarwar</h5>
+                        <p class="text-accent-gold text-xs sm:text-sm font-semibold mb-1">Consultant Psychologist</p>
+                        <div class="max-h-0 overflow-hidden group-hover:max-h-24 transition-all duration-500 ease-in-out">
+                            <p class="text-slate-500 text-[10px] sm:text-xs pt-2 border-t border-slate-100 mt-2">
+                                MBBS MCPS Psychology.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= CTA SECTION ================= -->
+ 
+
+<!--footerrrrrrrrr-->
+ <footer class="pro-footer">
+    <div class="footer-container">
+        
+        <div class="footer-row">
+            
+            <div class="footer-col about-col">
+                <a href="#" class="footer-logo">
+                     
+                    <span>PRO</span>
+                </a>
+                <p>Pakistan Recovery Oasis provides expert mental health recovery, addiction treatment, and psychological counseling in a safe environment.</p>
+                
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/Pakistanrecoveryoasis"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/pakistan.recovery.oasispro?igsh=cjF6cHZydWw0YjJ5"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@PakistanRecoveryOasis"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@pro.pakistan78?_r=1&_t=ZN-91cJgL9bVv4"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col links-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h4>Get in Touch</h4>
+                <ul class="contact-list">
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>House NO. 13 Block H Canal Berg Lahore<br>Pakistan</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>
+                            <a href="tel:+92399123489">0339-9123489</a>
+                        </span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>
+                            <a href="tel:03007992533">0300-7992533</a>
+                        </span>
+                    </li><li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>
+                            <a href="tel:0323-7280567">0323-7280567</a>
+                        </span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>
+                            <a href="PakistanRecoveryOasis@gmail.com">pakistanrecoveryoasis@gmail.com</a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col map-col">
+                <h4>Locate Us</h4>
+                <div class="map-circle">
+                   <iframe 
+       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.714702379401!2d74.24161107844887!3d31.47703338286708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391903d6646f788b%3A0x3229f734a97f0ed8!2sPakistan%20Recovery%20Oasis!5e0!3m2!1sen!2sus!4v1764247590068!5m2!1sen!2sus" 
+        width="100%" 
+        height="100%" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Pakistan Recovery Oasis. All Rights Reserved.</p>
+        <p class="powered-by">Powered by <a href="codedclouds.org">CODEDCLOUDS</a></p>
+    </div>
+</footer>
+
+    <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
+  <a href="https://wa.me/923399123489" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>  
+
+
+</body>
+
+</html>

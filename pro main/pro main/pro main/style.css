@@ -1,0 +1,1616 @@
+ 
+:root {
+   
+    --primary: #0a870e;    
+     
+    --secondary: #043102;  
+     
+    --accent: #f9a825;     
+     
+    --dark: #2d2d2d;       
+     
+    --light: #f4f9f4;      
+    
+    --font: 'Poppins', sans-serif;
+}
+body {
+    font-family: var(--font);
+    background-color: var(--light);
+    overflow-x: hidden;
+}
+
+ 
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;   
+    right: 30px;    
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;  
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 32px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 9999; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+ 
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);  
+    color: white;
+}
+ 
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 28px;
+    }
+}
+    
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.logo-img {
+    height: 40px;  
+    width: auto;   
+    object-fit: contain;
+    transition: 0.3s;
+}
+ 
+@media (max-width: 991px) {
+    .logo-img {
+        height: 35px;  
+    }
+}
+.custom-navbar {
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.logo-text {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: 1px;
+}
+
+.dot { color: var(--accent); font-size: 40px; line-height: 0; }
+
+.nav-link {
+    color: var(--dark);
+    font-weight: 500;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary);
+}
+
+.btn-pro {
+    background: var(--primary);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(15, 76, 117, 0.3);
+}
+
+.btn-pro:hover {
+    background: var(--secondary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+ 
+.hero-section {
+    padding-top: 120px;  
+    padding-bottom: 60px;
+    overflow: hidden;  
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    min-height: 100vh;  
+    display: flex;
+    align-items: center;
+}
+ 
+.hero-text {
+    z-index: 2;  
+}
+ 
+.tagline {
+    color: var(--primary);  
+    font-weight: 800;       
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 1.6rem;     
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+ 
+.hero-text h1 {
+    font-size: 2.8rem;  
+    font-weight: 800;
+    color: var(--dark);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: var(--primary);
+    position: relative;
+    display: inline-block;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 5px; left: 0; width: 100%; height: 10px;
+    background: var(--accent); opacity: 0.3; z-index: -1;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 35px;
+    max-width: 550px;  
+    line-height: 1.6;
+}
+ 
+.hero-btns { display: flex; gap: 15px; margin-bottom: 40px; }
+.btn-primary-hero { background: var(--primary); color: white; border: none; padding: 15px 35px; border-radius: 50px; font-weight: 600; transition: 0.3s; }
+.btn-secondary-hero { background: transparent; color: var(--primary); border: 2px solid var(--primary); padding: 15px 35px; border-radius: 50px; font-weight: 600; transition: 0.3s; }
+.btn-primary-hero:hover { background: var(--secondary); transform: translateY(-3px); }
+.btn-secondary-hero:hover { background: var(--primary); color: white; }
+ 
+/* ========================
+   HERO VISUAL (PERFECT ROTATION)
+   ======================== */
+.hero-visual {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Watermark Background */
+.watermark-bg {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    opacity: 0.08;
+    pointer-events: none;
+}
+.watermark-bg img { width: 450px; height: auto; filter: grayscale(100%); }
+
+/* --- ORBIT CONTAINER (Main Circle Size) --- */
+.orbit-container {
+    position: relative;
+    width: 450px;  /* Desktop Size */
+    height: 450px; /* Desktop Size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+/* Center Hub (Leaf Icon) */
+ /* ========================
+   CENTER HUB IMAGE FIX (PADDING ADDED)
+   ======================== */
+
+.center-hub {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    
+    /* Background White (Jaisa tumne manga) */
+    background: white; 
+    
+    /* Border & Shape */  /* Border */
+    border-radius: 50%;      /* Gol Daira */
+    
+    /* Flexbox Center */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    
+    /* Shadow (Green Glow) */
+    box-shadow: 0 0 30px rgba(10, 135, 14, 0.4);
+    
+    /* --- MAIN FIX (Padding) --- */
+    /* Yahan padding di hai taake image border se door rahay */
+    padding: 15px; 
+    
+    overflow: hidden;
+}
+
+.hub-img {
+    width: 100%;
+    height: 100%;
+    /* Contain: Image puri dikhegi, kategi nahi */
+    object-fit: contain; 
+    display: block;
+}
+
+/* Rotating Track */
+.orbit-track {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px dashed rgba(10, 135, 14, 0.3);
+    animation: rotateCircle 30s linear infinite;
+}
+
+/* --- ORBIT ITEMS (Shared Styling) --- */
+.orbit-item {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 120px;
+    /* Center the item perfectly on its coordinate */
+    transform: translate(-50%, -50%); 
+    /* Counter Rotate inside Animation to keep text straight */
+}
+
+/* --- PERFECT EQUAL SPACING (Formula) --- */
+/* Humne Circle ko 6 hisson mein taqseem kiya hai.
+   Har box ka faasla bilkul same hoga.
+*/
+
+/* 1. Top Center */
+.item-1 { top: 0%; left: 50%; }
+
+/* 2. Top Right */
+.item-2 { top: 25%; left: 93%; }
+
+/* 3. Bottom Right */
+.item-3 { top: 75%; left: 93%; }
+
+/* 4. Bottom Center */
+.item-4 { top: 100%; left: 50%; }
+
+/* 5. Bottom Left */
+.item-5 { top: 75%; left: 7%; }
+
+/* 6. Top Left */
+.item-6 { top: 25%; left: 7%; }
+
+
+/* Icon Styling */
+.icon-circle {
+    width: 55px;
+    height: 55px;
+    background: white;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary);
+    font-size: 22px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 5px;
+    transition: 0.3s;
+}
+
+/* Text Styling */
+.orbit-item span {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--dark);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 4px 8px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+    white-space: nowrap; /* Text tootay na */
+}
+
+/* Hover Effects */
+.orbit-container:hover .orbit-track { animation-play-state: paused; }
+.orbit-container:hover .orbit-item .icon-circle { 
+    animation-play-state: paused;
+    background: var(--accent); 
+    color: white; 
+    transform: scale(1.1); 
+}
+
+/* --- ANIMATIONS --- */
+/* Pura Circle Ghoomega */
+@keyframes rotateCircle { 
+    from { transform: rotate(0deg); } 
+    to { transform: rotate(360deg); } 
+}
+
+/* Item k andar Text wapis ulta ghoomega taake seedha dikhay */
+/* Notice: Maine yahan 'transform' use nahi kiya taake positioning kharab na ho */
+.orbit-item {
+    animation: counterRotate 30s linear infinite;
+}
+
+@keyframes counterRotate { 
+    from { transform: translate(-50%, -50%) rotate(0deg); } 
+    to { transform: translate(-50%, -50%) rotate(-360deg); } 
+}
+
+
+/* ========================
+   MOBILE RESPONSIVE (Perfect Fit)
+   ======================== */
+@media (max-width: 991px) {
+    .hero-visual {
+        height: 400px;
+        width: 100%;
+        margin-top: 50px;
+        overflow: hidden; 
+    }
+
+    /* Mobile par Circle Chota kar diya */
+    .orbit-container {
+        width: 290px; 
+        height: 290px;
+    }
+
+    .watermark-bg img { width: 260px; }
+    
+    .icon-circle { width: 40px; height: 40px; font-size: 16px; }
+    
+    /* Text thora chota */
+    .orbit-item span { 
+        font-size: 10px; 
+        padding: 2px 6px;
+        max-width: 90px;
+        white-space: normal; /* Mobile pe agar lamba ho to neeche aye */
+        line-height: 1.1;
+    }
+}
+
+
+
+
+
+
+
+/* ========================
+   MOBILE BUTTONS FIX
+   ======================== */
+@media (max-width: 991px) {
+    
+    /* Container ko Flex Column bana diya */
+    .hero-btns {
+        display: flex;
+        flex-direction: column; /* Ek k neeche ek */
+        align-items: center;    /* Center mein laye */
+        gap: 15px;              /* Beech mein gap */
+        width: 100%;
+        margin-bottom: 30px;    /* Neeche gap */
+    }
+
+    /* Link Tag (<a>) ko set karna zaroori hai */
+    .hero-btns a {
+        width: 100%;
+        max-width: 300px; /* Button ki hadd */
+        text-decoration: none;
+        display: block;
+    }
+
+    /* Buttons Styling */
+    .btn-primary-hero, 
+    .btn-secondary-hero {
+        width: 100%;          /* Full Width */
+        max-width: 300px;     /* Limit Width */
+        padding: 12px 0;      /* Padding thori kam */
+        font-size: 14px;      /* Font size adjust */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;       /* Center align */
+        height: 50px;         /* Fixed Height neat look k liye */
+    }
+}
+
+/* Hover Effects */
+
+/* Jab pure container pe mouse aye, to Track ruk jaye */
+.orbit-container:hover .orbit-track { 
+    animation-play-state: paused; 
+}
+
+/* Zaroori Fix: Jab container pe mouse aye, to Items ka Counter-Rotate bhi ruk jaye */
+/* Is se Text bhi apni jagah jam jayega */
+.orbit-container:hover .orbit-item {
+    animation-play-state: paused;
+}
+
+/* Jab kisi specific item pe mouse aye, to uska color change ho */
+.orbit-container:hover .orbit-item .icon-circle { 
+    /* Note: Animation state upar wale rule se control ho rahi hai */
+    background: var(--accent); 
+    color: white; 
+    transform: scale(1.1); 
+}
+
+
+
+
+
+
+ 
+.events-grid {
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    width: 100%;
+}
+ 
+.event-card {
+    position: relative;
+    height: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #000;   
+    top: auto !important; 
+    left: auto !important;
+    right: auto !important;
+    margin: 0 !important;
+    transform: none; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);  
+    box-shadow: 0 15px 30px rgba(10, 135, 14, 0.2);
+}
+ 
+.event-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease;
+}
+
+ 
+.event-box-1 .event-bg { background-image: url('./Images/MOU.jpg'); }
+.event-box-2 .event-bg { background-image: url('./Images/im.jpg'); }
+.event-box-3 .event-bg { background-image: url('./Images/UMT2.jpg'); }
+.event-box-4 .event-bg { background-image: url('./Images/si.jpg'); }
+
+.event-card:hover .event-bg {
+    transform: scale(1.1);
+}
+ 
+.event-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(4, 49, 2, 0.9) 100%);
+    z-index: 1;
+}
+
+ 
+.event-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 2;
+    color: white;
+    text-align: left;  
+}
+
+.event-date {
+    background: var(--accent);
+    color: var(--dark);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.event-content h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 3px;
+    line-height: 1.3;
+}
+
+.event-content p {
+    margin: 0;
+    font-size: 0.85rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+
+.gallery-btn-container { text-align: center; }
+.view-gallery-btn {
+    display: inline-block;
+    padding: 12px 35px;
+    background: white;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.view-gallery-btn:hover { background: var(--primary); color: white; }
+ 
+@media (max-width: 991px) {
+    .events-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 15px;
+    }
+
+    .event-card {
+        height: 240px; 
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .events-grid { 
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .event-content h4 { font-size: 0.9rem; }
+    .event-content p { display: none; }  
+}
+
+
+
+
+
+ 
+.achievements-section {
+    padding: 80px 0; 
+    background: linear-gradient(135deg, var(--secondary) 0%, #022001 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+ 
+.achievements-section .section-subtitle {
+    color: var(--accent); 
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+ 
+.circular-counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+ 
+.circular-counter .circle {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+ 
+.circular-counter .circle::before {
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; 
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    border-top-color: var(--accent);
+    border-right-color: var(--primary);
+    border-bottom-color: var(--accent); 
+    animation: spinRing 2s linear infinite; 
+    box-shadow: 0 0 20px rgba(10, 135, 14, 0.5);
+}
+
+@keyframes spinRing {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+ 
+.circular-counter .box {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background: var(--secondary);  
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+    z-index: 2;
+}
+ 
+.circular-counter .num {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.circular-counter .plus {
+    color: var(--accent);  
+    font-size: 30px;
+    font-weight: 800;
+    margin-left: 2px;
+}
+ 
+.counter-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #e0e0e0;
+    letter-spacing: 1px;
+}
+ 
+@media (max-width: 768px) {
+    .achievements-section {
+        padding: 50px 0;
+    }
+
+    .circular-counter {
+        margin-bottom: 30px;
+    }
+
+    .circular-counter .circle {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .circular-counter .circle::before {
+        width: 140px;
+        height: 140px;
+    }
+
+    .circular-counter .box {
+        width: 120px;
+        height: 120px;
+    }
+
+    .circular-counter .num {
+        font-size: 28px;
+    }
+    
+    .counter-text {
+        font-size: 1rem;
+    }
+}
+ 
+.team-section {
+    padding: 80px 0;
+    background-color: #ffffff;  
+}
+ 
+.team-member {
+    text-align: center;
+    padding: 20px;
+    background: #fff; 
+    border-radius: 20px; 
+    transition: transform 0.3s ease;
+}
+ 
+@media (max-width: 768px) {
+    .team-member {
+        margin-bottom: 30px;
+    }
+}
+ 
+.img-wrapper {
+    width: 100%; 
+    height: 500px; 
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 20px; 
+}
+
+.member-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+    display: block; 
+}
+ 
+.member-info .name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 5px;
+}
+
+.member-info .role {
+    font-size: 1rem;
+    color: var(--primary);  
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* --- SOCIAL ICONS --- */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.icon-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;  
+    background-color: #f4f4f4;  
+    color: var(--dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+ 
+.icon-btn:hover {
+    color: white;
+    transform: translateY(-3px);
+}
+
+.instagram:hover { background: #E1306C; }
+.facebook:hover { background: #1877F2; }
+.youtube:hover { background: #FF0000; }
+.tiktok:hover { background: #000000; }
+ 
+@media (max-width: 768px) {
+    .img-wrapper {
+        height: 350px;  
+    }
+    
+    .member-info .name {
+        font-size: 1.5rem;
+    }
+}
+ 
+.clients-section {
+    padding: 50px 0;
+    background: white;  
+    overflow: hidden; 
+}
+ 
+.slider {
+    height: 100px;  
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+ 
+.slider::before,
+.slider::after {
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 150px; 
+    z-index: 2;
+}
+
+.slider::before {
+    left: 0;
+    top: 0;
+}
+
+.slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+ 
+.slide-track {
+    animation: scroll 20s linear infinite;  
+    display: flex;
+    width: calc(250px * 10); 
+}
+ 
+.slide {
+    height: 100px;
+    width: 250px;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px; 
+}
+
+.slide img {
+    max-width: 100%;
+    max-height: 80px;  
+    opacity: 0.6;
+    transition: 0.3s;
+}
+ 
+.slider:hover .slide-track {
+    animation-play-state: paused; 
+}
+
+.slide img:hover { 
+    opacity: 1;
+    transform: scale(1.1);
+}
+ 
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {  
+        transform: translateX(calc(-250px * 4)); 
+    }
+}
+
+/* ========================
+   footerrrrrrr
+   ======================== */ 
+.pro-footer {
+    background-color: var(--secondary); 
+    color: white;
+    padding-top: 70px;
+    width: 100%;
+    overflow: hidden;  
+    position: relative;
+    border-top: 5px solid var(--accent);  
+}
+ 
+.footer-container {
+    width: 100%;
+    padding: 0 5%;  
+    max-width: 1400px;  
+    margin: 0 auto;
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    padding-bottom: 50px;
+}
+ 
+.footer-col {
+    flex: 1;
+    min-width: 250px;  
+}
+ 
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.footer-logo-img {
+    height: 50px;
+    background: white;  
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.footer-col p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+ 
+.footer-col h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--accent);  
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 40px;
+    height: 3px;
+    background: white;
+}
+ 
+.links-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.links-col li { margin-bottom: 12px; }
+
+.links-col a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+.links-col a:hover {
+    color: var(--accent);
+    padding-left: 5px;
+}
+ 
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: flex-start;
+}
+
+.contact-list i {
+    color: var(--accent);
+    margin-top: 5px;
+}
+
+.contact-list a { color: white; text-decoration: none; }
+.contact-list a:hover { text-decoration: underline; }
+ 
+.footer-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-socials a {
+    width: 35px;
+    height: 35px;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.footer-socials a:hover {
+    background: var(--accent);
+    color: var(--secondary);
+    transform: translateY(-3px);
+}
+ 
+.map-col {
+    display: flex;
+    flex-direction: column; 
+
+}
+.map-col h4 {
+    margin-left: 30px;    }
+
+.map-circle {
+    width: 180px;
+    height: 180px;
+    border-radius:11px;
+    overflow: hidden;
+    border: 2px solid var(--accent);  
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    position: relative;
+    background: #000;
+    margin-left: 30px;
+}
+
+.map-circle iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    filter: grayscale(20%); 
+}
+ 
+.footer-bottom {
+    background: #022001;  
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    flex-wrap: wrap;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 13px;
+    color: #aaa;
+}
+
+.powered-by a {
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: none;
+} 
+@media (max-width: 991px) {
+    .footer-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-logo { justify-content: center; }
+    .footer-socials { justify-content: center; }
+
+    .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);  
+    }
+
+    .contact-list li {
+        justify-content: center;
+    }
+  
+    .map-col {
+        align-items: center;
+    }
+
+    .map-circle {
+        width: 200px;    
+        height: 200px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+@media (max-width: 991px) {
+ 
+    .hero-visual {
+        height: auto;           
+        min-height: 400px;
+        display: flex;          
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        padding: 20px;          
+        overflow: hidden;      
+        margin-top: 30px;
+    }
+ 
+    .blob-cont {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 120%;  
+        height: 100%;
+        z-index: 0;
+    }
+ 
+    .glass-card {
+        position: relative;  
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        
+        width: 100%;
+        max-width: 320px;  
+        margin: 10px 0;   
+        z-index: 2;
+         
+        animation: none; 
+    }
+ 
+    .card-1 {
+        align-self: flex-end;  
+        margin-right: 10px;
+    }
+
+    .card-2 {
+        align-self: center;   
+    }
+
+    .card-3 {
+        align-self: flex-start; 
+        margin-left: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================
+   SCROLL VIDEO ANIMATION
+   ======================== */
+.video-scroll-section {
+    /* Section ki height bohot lambi rakhi hai taake scroll karne ka time mile */
+    height: 300vh; 
+    position: relative;
+    background-color: var(--light); /* Cream BG */
+}
+
+/* Sticky Container (Jo screen par ruka rahega) */
+.sticky-wrapper {
+    position: sticky;
+    top: 0;
+    height: 100vh; /* Full screen height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Main Content Container */
+.content-container {
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.8s ease-in-out; /* Smooth Movement */
+}
+
+/* --- VIDEO BOX --- */
+.video-box {
+    width: 100%; /* Shuru mein Full Width */
+    height: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 2;
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth Animation */
+}
+
+.main-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- TEXT BOX (Hidden Initially) --- */
+.text-box {
+    width: 0%; /* Shuru mein gayab */
+    opacity: 0;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.8s ease-in-out;
+    white-space: nowrap; /* Text tootay na jab chupa ho */
+}
+
+.sub-heading {
+    color: var(--primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.text-box h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 20px;
+}
+
+.text-box p {
+    color: #555;
+    margin-bottom: 20px;
+    white-space: normal; /* Wapis normal */
+    line-height: 1.6;
+}
+
+.features-list .f-item {
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.features-list i {
+    color: var(--primary);
+    margin-right: 10px;
+}
+
+
+/* --- ANIMATION ACTIVE STATE (JS add karega) --- */
+.video-scroll-section.active .video-box {
+    width: 50%; /* Video आधी ho jaye */
+    transform: translateX(0);
+}
+
+.video-scroll-section.active .text-box {
+    width: 50%; /* Text aadha hissa le le */
+    opacity: 1;
+    padding-left: 50px; /* Gap */
+}
+
+
+/* ========================
+   MOBILE RESPONSIVE (Disable Animation)
+   ======================== */
+@media (max-width: 991px) {
+    .video-scroll-section {
+        height: auto; /* Scroll khatam */
+        padding: 50px 0;
+    }
+
+    .sticky-wrapper {
+        position: relative;
+        height: auto;
+        top: auto;
+    }
+
+    .content-container {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    /* Mobile pe seedha dikhao */
+    .video-box {
+        width: 100% !important;
+        height: 300px;
+        margin-bottom: 30px;
+    }
+
+    .text-box {
+        width: 100% !important;
+        opacity: 1 !important;
+        padding-left: 0 !important;
+        white-space: normal;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================
+   LIFE at PRO
+   ======================== */
+
+   /* ========================
+   LIFE AT PRO SECTION
+   ======================== */
+.life-at-pro-section {
+    padding: 80px 0;
+    background-color: #fcfcfc; /* Halka sa grey/white mix */
+}
+
+/* --- CARD STYLING --- */
+.life-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 300px; /* Fixed height for uniformity */
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.life-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Hover Effect: Zoom Image */
+.life-card:hover .life-img {
+    transform: scale(1.1);
+}
+
+/* --- OVERLAY STYLING (Green Gradient) --- */
+.life-overlay {
+    position: absolute;
+    bottom: -100%; /* Initially Hidden below */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(4, 49, 2, 0.95) 20%,   60%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    transition: bottom 0.4s ease-in-out;
+}
+
+/* Hover Effect: Show Overlay */
+.life-card:hover .life-overlay {
+    bottom: 0;
+}
+
+.life-overlay h4 {
+    color: var(--accent); /* Gold Heading */
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+}
+
+.life-overlay p {
+    color: white;
+    font-size: 0.85rem;
+    margin: 0;
+    font-weight: 300;
+}
+
+/* ========================
+   MOBILE RESPONSIVE
+   ======================== */
+@media (max-width: 991px) {
+    .life-card {
+        height: 200px; /* Mobile pe thora chota card */
+    }
+    
+    .life-overlay h4 {
+        font-size: 0.9rem;
+    }
+    
+    .life-overlay p {
+        font-size: 0.75rem;
+    }
+}
+
+
+
+
+
+
+/* ========================
+   MOBILE ORBIT TEXT FIX
+   ======================== */
+@media (max-width: 991px) {
+    
+    /* Item Container ki width fix ki */
+    .orbit-item {
+        width: 90px; /* Thora chota area */
+    }
+
+    /* Text Span Styling */
+    .orbit-item span {
+        white-space: normal !important; /* Zaroori: Text toot kar neeche aye */
+        word-wrap: break-word;          /* Agar lafz bohot lamba ho to toote */
+        font-size: 9px !important;      /* Font thora chota */
+        line-height: 1.2;               /* Lines k beech gap kam */
+        padding: 4px 6px;               /* Padding adjust */
+        max-width: 100%;                /* Container se bahar na jaye */
+        display: inline-block;
+    }
+}
+
+
+
+/* ========================
+   counterrrrr
+   ======================== */
+
+
+   /* ========================
+   VISITOR COUNTER STYLING
+   ======================== */
+.counter-section {
+    padding: 20px 0 60px 0; /* Thoda spacing */
+    background: transparent;
+}
+
+.counter-card {
+    background: #ffffff;
+    border-radius: 20px; /* Round corners like your screenshot */
+    padding: 30px 50px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08); /* Soft Shadow */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    max-width: 900px;
+    margin: 0 auto; /* Center align */
+    border-left: 5px solid #198754; /* Green accent bar */
+}
+
+/* Background Circle Design (Jo screenshot mein halka sa dikh raha tha) */
+.counter-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -5%;
+    width: 200px;
+    height: 200px;
+    background: rgba(25, 135, 84, 0.05); /* Very light green */
+    border-radius: 50%;
+    z-index: 0;
+}
+
+/* Content Layout */
+.counter-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 1; /* Circle ke upar */
+}
+
+/* Icon Design */
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background: rgba(25, 135, 84, 0.1);
+    color: #198754; /* Green Theme Color */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+/* Text Design */
+.counter-text h5 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #0b2545; /* Dark Navy */
+}
+
+.counter-text p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Number Design */
+.counter-number-box {
+    z-index: 1;
+}
+
+#visit-count {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #198754; /* Green Number */
+    letter-spacing: 2px;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* ========================
+   MOBILE RESPONSIVE
+   ======================== */
+@media (max-width: 768px) {
+    .counter-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+        gap: 20px;
+    }
+
+    .counter-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .counter-card::before {
+        left: 50%;
+        transform: translateX(-50%);
+        top: -20%;
+    }
+    
+    #visit-count {
+        font-size: 2.5rem;
+    }
+}

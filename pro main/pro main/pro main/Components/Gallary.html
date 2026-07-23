@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRO - Gallery & Events</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <style>
+  .gallery-header {
+    height: 400px;  
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+     
+    background: url('../Images/cover.jpg') no-repeat center center/cover;
+    background-attachment: fixed;  
+}
+ 
+.gallery-header .overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(4, 49, 2, 0.7);  
+}
+
+.gallery-header .content {
+    position: relative;
+    z-index: 2;
+}
+
+.gallery-header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.gallery-header p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+ 
+.gallery-page-section {
+    padding: 80px 0;
+    background-color: var(--light); 
+}
+
+.masonry-grid {
+    column-count: 3; 
+    column-gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    margin-bottom: 20px; 
+    border-radius: 15px;
+    overflow: hidden;
+    break-inside: avoid; 
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    display: block;
+    border-radius: 15px;
+    transition: transform 0.5s ease;
+}
+ 
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* --- VIDEO STYLING ADDED HERE --- */
+.gallery-video {
+    width: 100%;
+    display: block;
+    border-radius: 15px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover .gallery-video {
+    transform: scale(1.1);
+}
+
+/* Specific Height Fix for Videos */
+#j-video, #i-video {
+    height: 350px;
+    width: 100%;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    background: black;
+}
+
+#j-video video, #i-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* ------------------------------- */
+
+.img-overlay {
+    position: absolute;
+    bottom: -100%;  
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(35, 100, 12, 0.9), transparent);  
+    color: white;
+    transition: 0.3s ease;
+}
+
+.gallery-item:hover .img-overlay {
+    bottom: 0;  
+}
+
+.img-overlay h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--accent);  
+}
+
+.img-overlay p {
+    font-size: 0.8rem;
+    margin: 0;
+    opacity: 0.9;
+}
+ 
+@media (max-width: 991px) {
+    .gallery-header { 
+        height: 300px;
+        /* Mobile Background Zoom Fix */
+        background-attachment: scroll !important; 
+        background-position: center center !important;
+        background-size: cover !important; 
+    }
+    
+    .gallery-header h1 { font-size: 2.2rem; }
+    
+    .masonry-grid {
+        column-count: 2;  
+    }
+
+    /* Mobile Video Height */
+    #j-video, #i-video {
+        height: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    .masonry-grid {
+        column-count: 1; 
+    }
+    
+    .gallery-header h1 { font-size: 1.8rem; }
+}
+/**/ 
+:root { 
+    --primary: #0a870e;    
+     
+    --secondary: #043102;  
+     
+    --accent: #f9a825;     
+     
+    --dark: #2d2d2d;       
+     
+    --light: #f4f9f4;      
+    
+    --font: 'Poppins', sans-serif;
+}
+.pro-footer {
+    background-color: var(--secondary);  
+    color: white;
+    padding-top: 70px;
+    width: 100%;
+    overflow: hidden;  
+    position: relative;
+    border-top: 5px solid var(--accent);  
+}
+ 
+.footer-container {
+    width: 100%;
+    padding: 0 5%;  
+    max-width: 1400px; 
+    margin: 0 auto;
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    padding-bottom: 50px;
+}
+ 
+.footer-col {
+    flex: 1;
+    min-width: 250px;  
+}
+ 
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.footer-logo-img {
+    height: 50px;
+    background: white; 
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.footer-col p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+ 
+.footer-col h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--accent); 
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 40px;
+    height: 3px;
+    background: white;
+}
+ 
+.links-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.links-col li { margin-bottom: 12px; }
+
+.links-col a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+.links-col a:hover {
+    color: var(--accent);
+    padding-left: 5px;
+}
+ 
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: flex-start;
+}
+
+.contact-list i {
+    color: var(--accent);
+    margin-top: 5px;
+}
+
+.contact-list a { color: white; text-decoration: none; }
+.contact-list a:hover { text-decoration: underline; }
+ 
+.footer-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-socials a {
+    width: 35px;
+    height: 35px;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.footer-socials a:hover {
+    background: var(--accent);
+    color: var(--secondary);
+    transform: translateY(-3px);
+}
+ 
+.map-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;  
+}
+.map-col h4 { 
+    margin-right: 85px;}
+
+.map-circle {
+    width: 180px;
+    height: 180px;
+    border-radius: 11px;
+    overflow: hidden;
+    border: 2px solid #f9a825;  
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    position: relative;
+    background: #000;
+    margin-left: 20px;
+}
+
+.map-circle iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    filter: grayscale(20%); 
+}
+ 
+.footer-bottom {
+    background: #022001;  
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    flex-wrap: wrap;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 13px;
+    color: #aaa;
+}
+
+.powered-by a {
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: none;
+}
+ 
+/* ========================
+   SPECIFIC VIDEO CARD FIX (#j-video)
+   ======================== */
+
+/* 1. Card Container ka size fix karo */
+#j-video {
+    height: 350px; /* Laptop par height fix (taake bohot lambi na ho) */
+    width: 100%;
+    overflow: hidden; /* Agar video bahar nikle to kat jaye */
+    position: relative;
+    border-radius: 15px;
+}
+
+/* 2. Video ko us box k andar fit karo */
+#j-video .gallery-video {
+    width: 100%;
+    height: 100%;       /* Box ki height le le */
+    object-fit: cover;  /* Zaroori: Video crop ho kar fit hogi, stretch nahi hogi */
+    display: block;
+}
+
+/* --- MOBILE ADJUSTMENT --- */
+@media (max-width: 991px) {
+    #j-video {
+        height: 250px; /* Mobile par height thori aur kam */
+    }
+}
+@media (max-width: 991px) {
+    .footer-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-logo { justify-content: center; }
+    .footer-socials { justify-content: center; }
+
+    .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);  
+    }
+
+    .contact-list li {
+        justify-content: center;
+    }
+ 
+    .map-col {
+        align-items: center;
+    }
+.map-col h4 { 
+    margin-right: 10px;}
+    .map-circle {
+        width: 200px;  
+        height: 200px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <nav class="navbar custom-navbar navbar-expand-lg position-relative">
+        <div class="container">
+            <a class="navbar-brand logo-wrapper" href="index.html">
+                 
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#galleryMenu">
+                <span class="fa-solid fa-bars-staggered" style="color: var(--primary);"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="galleryMenu">
+                <ul class="navbar-nav gap-3 align-items-center">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link fw-bold"> <i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+                    </li>
+                     
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="gallery-header">
+    <div class="overlay"></div>
+    <div class="container text-center content">
+        <h1 data-aos="fade-up">Moments of Impact</h1>
+        <p data-aos="fade-up" data-aos-delay="100">Witnessing our journey of strategic partnerships, awards, and recovery success stories.</p>
+    </div>
+</header>
+
+<section class="gallery-page-section">
+    <div class="container">
+        
+        <div class="text-center mb-5">
+            <span class="section-subtitle">Official Gallery</span>
+        </div>
+
+        <div class="masonry-grid">
+
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="../Images/colobration.jpg" alt="Founder Signing">
+                <div class="img-overlay">
+                    <h5>Founder Signing Ceremony</h5>
+                    <p>Mr. Imran with Partners</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="../Images/std3.jpg" alt="Founder Signing">
+                <div class="img-overlay">
+                    <h5>Awareness</h5>
+                    <p>PRO Expansion</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="../Images/agremnt.jpg" alt="Co-Founder Signing">
+                <div class="img-overlay">
+                    <h5>Co-Founder Signing</h5>
+                    <p>Mr. Junaid Ahmad</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up">
+                <video autoplay muted loop playsinline class="gallery-video">
+                    <source src="../Images/gv1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="img-overlay">
+                    <h5>Brigadier Mazhar, DG Counter Narcotics Force (CNF) Punjab, Dean Dr Haziq Mehmood and UMT management</h5>
+                    <p>Briefing by PRO, on new trends in addiction</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="../Images/UMT2.jpg" alt="UMT Ceremony">
+                <div class="img-overlay">
+                    <h5>UMT Event</h5>
+                    <p>Addressing the Audience</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="../Images/si.jpg" alt="Founder with Students">
+                <div class="img-overlay">
+                    <h5>Student Interaction</h5>
+                    <p>Founder guiding youth</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" >
+                <img src="../Images/ms.jpg" alt="Co-Founder with Students">
+                <div class="img-overlay">
+                    <h5>Mentorship Session</h5>
+                    <p>Co-Founder at University</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="../Images/ad1.jpg" alt="Awards Distribution">
+                <div class="img-overlay">
+                    <h5>Awards Distribution</h5>
+                    <p>Encouraging Talent</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="../Images/UMTb1.jpg" alt="UMT Ceremony">
+                <div class="img-overlay">
+                    <h5>UMT 1st Batch</h5>
+                    <p>BS Students for Placement at PRO</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                 <video autoplay muted loop playsinline class="gallery-video" style="height: 300px;">
+                    <source src="../Images/lecture.webm" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="img-overlay">
+                    <h5>Gujranwala University</h5>
+                    <p>Lecture on Entrepreneurship </p>
+                </div>
+            </div>
+
+             <div class="gallery-item">
+                 <video autoplay muted loop playsinline class="gallery-video" style="height: 300px;">
+                    <source src="../Images/award.webm" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="img-overlay">
+                    <h5>Gujranwala University</h5>
+                    <p>Appreciation </p>
+                </div>
+            </div>
+
+             <div class="gallery-item" >
+                <img src="../Images/kds.jpg" alt="Talking to Kids">
+                <div class="img-overlay">
+                    <h5>Future Generation</h5>
+                    <p>Co-Founder Interaction</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="../Images/celibrate.jpg" alt="Founder Signing">
+                <div class="img-overlay">
+                    <h5>Celebrating A Milestone</h5>
+                    <p>Mr. Imran with Partners</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="../Images/IM-S.jpg" alt="Founder Signing">
+                <div class="img-overlay">
+                    <h5>MOU between PRO</h5>
+                    <p>Lahore Leads Univesity in flag pics</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="../Images/j-s.jpg" alt="Co-Founder Signing">
+                <div class="img-overlay">
+                   <h5>MOU between PRO</h5>
+                    <p>Lahore Leads Univesity in flag pics</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up" id="i-video">
+                <video autoplay muted loop playsinline class="gallery-video">
+                    <source src="../Images/i.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="img-overlay">
+                    <h5>Event Highlight</h5>
+                    <p>Official Coverage</p>
+                </div>
+            </div>
+
+            
+
+            <div class="gallery-item"  >
+                <img src="../Images/day.jpg" alt="UMT Ceremony">
+                <div class="img-overlay">
+                    <h5>Rehab Day</h5>
+                    <p>Free Campus in UMT</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="../Images/im.jpg" alt="Founder with Students">
+                <div class="img-overlay">
+                    <h5>Mr. Imran</h5>
+                    <p>Founder guiding youth</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up" id="j-video">
+                <video autoplay muted loop playsinline class="gallery-video">
+                    <source src="../Images/j.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="img-overlay">
+                    <h5>Mentorship Session</h5>
+                    <p>Co-Founder at University</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="../Images/ad1.jpg" alt="Awards Distribution">
+                <div class="img-overlay">
+                    <h5>Awards Distribution</h5>
+                    <p>Encouraging Talent</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="../Images/MOU.jpg" alt="MOU Signing">
+                <div class="img-overlay">
+                    <h5>MOU Signing</h5>
+                    <p>Official Partnership</p>
+                </div>
+            </div>
+
+             <div class="gallery-item" data-aos="fade-up">
+                <img src="../Images/UMT.jpg" alt="Talking to Kids">
+                <div class="img-overlay">
+                    <h5>UMT Distribution</h5>
+                    <p>Co-Founder Interaction</p>
+                </div>
+            </div>
+             
+            
+
+        </div>
+    </div>
+</section>
+
+    <footer class="pro-footer">
+    <div class="footer-container">
+        
+        <div class="footer-row">
+            
+            <div class="footer-col about-col">
+                <a href="#" class="footer-logo">
+                     
+                    <span>PRO</span>
+                </a>
+                <p>Pakistan Recovery Oasis provides expert mental health recovery, addiction treatment, and psychological counseling in a safe environment.</p>
+                
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/Pakistanrecoveryoasis"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/pakistan.recovery.oasispro?igsh=cjF6cHZydWw0YjJ5"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@PakistanRecoveryOasis"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@pro.pakistan78?_r=1&_t=ZN-91cJgL9bVv4"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col links-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h4>Get in Touch</h4>
+                <ul class="contact-list">
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>House NO. 13 Block H Canal Berg Lahore<br>Pakistan</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>
+                            <a href="tel:+92399123489">0339-9123489</a>
+                        </span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>
+                            <a href="tel:03007992533">0300-7992533</a>
+                        </span>
+                    </li><li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>
+                            <a href="tel:0323-7280567">0323-7280567</a>
+                        </span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>
+                            <a href="pakistanrecoveryoasis@gmail.com">pakistanrecoveryoasis@gmail.com</a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col map-col">
+                <h4>Locate Us</h4>
+                <div class="map-circle">
+                   <iframe 
+       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.714702379401!2d74.24161107844887!3d31.47703338286708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391903d6646f788b%3A0x3229f734a97f0ed8!2sPakistan%20Recovery%20Oasis!5e0!3m2!1sen!2sus!4v1764247590068!5m2!1sen!2sus" 
+        width="100%" 
+        height="100%" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Pakistan Recovery Oasis. All Rights Reserved.</p>
+        <p class="powered-by">Powered by <a href="https://omaan-jallani.github.io/coded-clouds/">CODEDCLOUDS</a></p>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script> AOS.init(); </script>
+</body>
+</html>

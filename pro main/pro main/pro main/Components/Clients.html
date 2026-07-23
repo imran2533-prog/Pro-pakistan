@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Clients - PRO</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<style> 
+ 
+.page-header {
+    height: 350px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-top: 80px;  
+    background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
+}
+
+.page-header .overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(4, 49, 2, 0.8);  
+}
+
+.page-header .content { position: relative; z-index: 2; }
+.page-header h1 { font-size: 3rem; font-weight: 800; text-transform: uppercase; }
+ 
+.big-clients-section {
+    padding: 80px 0;
+    background-color: var(--light);  
+}
+
+.big-client-card {
+    background: white;
+    padding: 50px 30px;  
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: all 0.4s ease;
+    border: 2px solid transparent;
+    height: 100%;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+ 
+.logo-wrapper-big {
+    height: 150px;  
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-wrapper-big img {
+    max-height: 100%; 
+    max-width: 80%;    
+    width: auto;
+    object-fit: contain;
+    transition: 0.4s ease;
+}
+ 
+.big-client-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin: 0;
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+ 
+.big-client-card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 40px rgba(10, 135, 14, 0.25);
+    border-color: var(--primary); 
+}
+
+.big-client-card:hover img {
+    transform: scale(1.1);  
+}
+ 
+@media (max-width: 768px) {
+    .page-header h1 { font-size: 2rem; }
+    
+    .big-client-card {
+        padding: 30px 20px;
+    }
+    
+    .logo-wrapper-big {
+        height: 100px; 
+    }
+}
+
+
+/*ffffffffffffffff*/
+
+:root { 
+    --primary: #0a870e;     
+    --secondary: #043102;  
+     
+    --accent: #f9a825;     
+     
+    --dark: #2d2d2d;       
+     
+    --light: #f4f9f4;      
+    
+    --font: 'Poppins', sans-serif;
+}
+.pro-footer {
+    background-color: var(--secondary);  
+    color: white;
+    padding-top: 70px;
+    width: 100%;
+    overflow: hidden; 
+    position: relative;
+    border-top: 5px solid var(--accent);  
+}
+ 
+.footer-container {
+    width: 100%;
+    padding: 0 5%;  
+    max-width: 1400px;  
+    margin: 0 auto;
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    padding-bottom: 50px;
+}
+
+/* --- COLUMNS --- */
+.footer-col {
+    flex: 1;
+    min-width: 250px; /* Kam se kam itni chorai ho */
+}
+
+/* Logo & Text */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.footer-logo-img {
+    height: 50px;
+    background: white; /* Agar logo transparent hai to white box de dia */
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.footer-col p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+/* Headings */
+.footer-col h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--accent); /* Gold Heading */
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 40px;
+    height: 3px;
+    background: white;
+}
+
+/* --- LINKS LIST --- */
+.links-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.links-col li { margin-bottom: 12px; }
+
+.links-col a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+.links-col a:hover {
+    color: var(--accent);
+    padding-left: 5px;
+}
+
+/* --- CONTACT LIST --- */
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: flex-start;
+}
+
+.contact-list i {
+    color: var(--accent);
+    margin-top: 5px;
+}
+
+.contact-list a { color: white; text-decoration: none; }
+.contact-list a:hover { text-decoration: underline; }
+
+/* --- SOCIAL ICONS --- */
+.footer-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-socials a {
+    width: 35px;
+    height: 35px;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.footer-socials a:hover {
+    background: var(--accent);
+    color: var(--secondary);
+    transform: translateY(-3px);
+}
+
+/* --- CIRCULAR MAP (THE SPECIAL FEATURE) --- */
+.map-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Right align on desktop */
+}
+.map-col h4 { 
+    margin-right: 85px;}
+
+.map-circle {
+    width: 180px;
+    height: 180px;
+    border-radius: 11px;
+    overflow: hidden;
+    border: 2px solid var(--accent); /* Gold Border */
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    position: relative;
+    background: #000;
+    margin-left: 20px;
+}
+
+.map-circle iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    filter: grayscale(20%); /* Thora sa dark map taake professional lage */
+}
+
+/* --- BOTTOM BAR --- */
+.footer-bottom {
+    background: #022001; /* Even Darker Green */
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    flex-wrap: wrap;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 13px;
+    color: #aaa;
+}
+
+.powered-by a {
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* ========================
+   MOBILE RESPONSIVE
+   ======================== */
+@media (max-width: 991px) {
+    .footer-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-logo { justify-content: center; }
+    .footer-socials { justify-content: center; }
+
+    .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%); /* Line center */
+    }
+
+    .contact-list li {
+        justify-content: center;
+    }
+
+    /* Map ko center karna mobile pe */
+    .map-col {
+        align-items: center;
+    }
+
+    .map-circle {
+        width: 200px; /* Thora bara mobile pe taake touch easy ho */
+        height: 200px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+</style>
+<body>
+
+    <nav class="navbar custom-navbar navbar-expand-lg">
+        <div class="container">
+           
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#clientMenu">
+                <span class="fa-solid fa-bars-staggered" style="color: var(--primary);"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="clientMenu">
+                <ul class="navbar-nav gap-3 align-items-center">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link fw-bold"> <i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+                    </li>
+                     
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="overlay"></div>
+        <div class="container text-center content">
+            <h1 data-aos="fade-up">Our Esteemed Clients</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Partnering with Pakistan's Top Educational Institutions</p>
+        </div>
+    </header>
+
+    <section class="big-clients-section">
+        <div class="container">
+            
+            <div class="row g-5 justify-content-center">
+                
+                <div class="col-md-6 col-12" data-aos="zoom-in">
+                    <div class="big-client-card">
+                        <div class="logo-wrapper-big">
+                            <img src="../Images/umt.png" alt="UMT Logo">
+                        </div>
+                        <h3>University of Management & Technology</h3>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-12" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="big-client-card">
+                        <div class="logo-wrapper-big">
+                            <img src="../Images/uol.png" alt="University of Lahore">
+                        </div>
+                        <h3>University of Lahore</h3>
+                    </div>
+                </div>
+ <div class="col-md-6 col-12" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="big-client-card">
+                        <div class="logo-wrapper-big">
+                            <img src="../Images/ucp.png" alt="University of Lahore">
+                        </div>
+                        <h3>University of Central Punjab</h3>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="big-client-card">
+                        <div class="logo-wrapper-big">
+                            <img src="../Images/ripha.png" alt="Riphah Logo">
+                        </div>
+                        <h3>Riphah International University</h3>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-12" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="big-client-card">
+                        <div class="logo-wrapper-big">
+                            <img src="../Images/leads.png" alt="Leads Logo">
+                        </div>
+                        <h3>Lahore Leads University</h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+  <footer class="pro-footer">
+    <div class="footer-container">
+        
+        <div class="footer-row">
+            
+            <div class="footer-col about-col">
+                <a href="#" class="footer-logo">
+                     
+                    <span>PRO</span>
+                </a>
+                <p>Pakistan Recovery Oasis provides expert mental health recovery, addiction treatment, and psychological counseling in a safe environment.</p>
+                
+               <div class="footer-socials">
+                    <a href="https://www.facebook.com/Pakistanrecoveryoasis"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/pakistan.recovery.oasispro?igsh=cjF6cHZydWw0YjJ5"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@PakistanRecoveryOasis"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@pro.pakistan78?_r=1&_t=ZN-91cJgL9bVv4"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col links-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h4>Get in Touch</h4>
+                <ul class="contact-list">
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>House NO. 13 Block H Canal Berg Lahore<br>Pakistan</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                       <span>
+                             <a href="tel:+92399123489">0339-9123489</a>
+                        </span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>
+                            <a href="tel:03007992533">0300-7992533</a>
+                        </span>
+                    </li><li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>
+                            <a href="tel:0323-7280567">0323-7280567</a>
+                        </span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>
+                            <a href="pakistanrecoveryoasis@gmail.com">pakistanrecoveryoasis@gmail.com</a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col map-col">
+                <h4>Locate Us</h4>
+                <div class="map-circle">
+                   <iframe 
+       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.714702379401!2d74.24161107844887!3d31.47703338286708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391903d6646f788b%3A0x3229f734a97f0ed8!2sPakistan%20Recovery%20Oasis!5e0!3m2!1sen!2sus!4v1764247590068!5m2!1sen!2sus" 
+        width="100%" 
+        height="100%" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Pakistan Recovery Oasis. All Rights Reserved.</p>
+        <p class="powered-by">Powered by <a href="https://omaan-jallani.github.io/coded-clouds/">CODEDCLOUDS</a></p>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script> AOS.init(); </script>
+
+</body>
+</html>

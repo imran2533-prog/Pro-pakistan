@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story - PRO</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* ========================
+   OUR STORY PAGE (REVISED)
+   ======================== */
+:root {
+   
+    --primary: #0a870e;    
+     
+    --secondary: #043102;  
+     
+    --accent: #f9a825;     
+     
+    --dark: #2d2d2d;       
+     
+    --light: #f4f9f4;      
+    
+    --font: 'Poppins', sans-serif;
+}
+/* --- HEADER COVER IMAGE --- */
+.story-header {
+    height: 60vh; /* Screen ka 60% cover karega */
+    min-height: 450px;
+    background: url('../Images/story.jpg') no-repeat center center/cover;
+    background-attachment: fixed; /* Parallax Effect */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 80px;
+}
+
+.story-header .overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark Overlay text parhne k liye */
+}
+
+.story-header .content-box {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.story-header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.story-subtitle {
+    display: block;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent); /* Gold */
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* --- READING SECTION --- */
+.story-reading-section {
+    padding-bottom: 100px;
+}
+
+.chapter-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--secondary);
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+}
+
+.chapter-title::after {
+    content: ''; display: block; width: 60px; height: 4px;
+    background: var(--accent); margin: 10px auto 0;
+}
+
+.story-para {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+/* Quote Box */
+.big-quote {
+    margin: 40px 0;
+    padding: 30px;
+    border-top: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+    background: #fcfcfc;
+}
+
+.big-quote i {
+    font-size: 30px;
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+.big-quote h2 {
+    font-size: 1.8rem;
+    font-weight: 700; 
+    color: var(--dark);
+    line-height: 1.4;
+}
+
+.highlight {
+    background: rgba(10, 135, 14, 0.1);
+    color: var(--primary);
+    font-weight: 700;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+/* Divider */
+.story-divider {
+    margin: 60px auto;
+    width: 100px;
+    border: 0;
+    height: 2px;
+    background: #ddd;
+}
+
+.truth-text {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1.6;
+    background: #f0fdf4;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px dashed var(--primary);
+}
+
+/* --- MISSION CARDS --- */
+.green-tag {
+    background: var(--primary);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.story-card {
+    background: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    height: 100%;
+    transition: 0.3s;
+    border: 1px solid #eee;
+}
+
+.story-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+}
+
+.story-card .icon-box {
+    width: 60px; height: 60px;
+    background: var(--light);
+    color: var(--primary);
+    font-size: 24px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    transition: 0.3s;
+}
+
+.story-card:hover .icon-box { background: var(--primary); color: white; }
+
+.story-card h5 { font-weight: 700; color: var(--dark); margin-bottom: 10px; }
+.story-card p { font-size: 0.9rem; color: #666; margin: 0; }
+
+/* --- FINAL IMPACT BOX --- */
+.final-impact-box {
+    background: var(--secondary); /* Dark Green */
+    border-radius: 25px;
+    padding: 60px 40px;
+    margin-top: 80px;
+    color: white;
+    box-shadow: 0 20px 50px rgba(4, 49, 2, 0.3);
+}
+
+.stat-group h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--accent); /* Gold */
+    margin: 0;
+}
+
+.stat-group p { font-size: 1rem; opacity: 0.8; letter-spacing: 1px; margin: 0; text-transform: uppercase; }
+
+.border-right-light { border-right: 1px solid rgba(255,255,255,0.2); }
+
+.impact-title { font-size: 2rem; font-weight: 700; margin-bottom: 15px; }
+.impact-desc { font-size: 1.1rem; opacity: 0.9; margin-bottom: 20px; }
+.impact-highlight { font-size: 1.2rem; font-weight: 700; color: var(--accent); border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px; }
+
+/* Mobile Responsive */
+@media (max-width: 991px) {
+    .story-header h1 { font-size: 2.2rem; }
+    .big-quote h2 { font-size: 1.4rem; }
+    
+    .border-right-light {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+    }
+}
+</style>
+<style>
+    /* ========================
+   MOBILE STORY COVER FIX
+   ======================== */
+@media (max-width: 991px) {
+    .story-header {
+        /* 1. Mobile par Parallax band (Yehi zoom kar raha tha) */
+        background-attachment: scroll !important;
+        
+        /* 2. Image ko center mein rakho */
+        background-position: center center !important;
+        
+        /* 3. Screen k hisaab se fit karo */
+        background-size: cover !important;
+        
+        /* 4. Height thori kam karo taake image ziada katay na */
+        height: 350px !important; 
+        min-height: auto !important;
+    }
+}
+</style>
+<body>
+
+    <nav class="navbar custom-navbar navbar-expand-lg">
+        <div class="container">
+            
+            <div class="collapse navbar-collapse justify-content-end" id="storyMenu">
+                <ul class="navbar-nav gap-3 align-items-center">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link fw-bold"> <i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="story-header">
+        <div class="overlay"></div>
+        <div class="container text-center content-box">
+            <span class="story-subtitle" data-aos="fade-down">Since Inception</span>
+            <h1 data-aos="zoom-in">Our Story </h1>
+            <h1 data-aos="zoom-in">  Why We Started</h1>
+            <p data-aos="fade-up">A journey from a question to a mission.</p>
+        </div>
+    </header>
+
+    <section class="story-reading-section">
+        <div class="container">
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    
+                    <h3 class="chapter-title" data-aos="fade-up">Not Born From Profit</h3>
+                    
+                    <p class="story-para" data-aos="fade-up">
+                        Pakistan Recovery Oasis was never born from profit. It began with a question that kept haunting <strong>Imran and Junaid</strong>:
+                    </p>
+
+                    <div class="big-quote" data-aos="zoom-in">
+                        <i class="fa-solid fa-quote-left"></i>
+                        <h2>“If rehabs exist… why are people still breaking?”</h2>
+                    </div>
+
+                    <p class="story-para" data-aos="fade-up">
+                        Everywhere they looked, the market was full of centers focused on  beds, payments, and business models  but almost no one was focusing on the actual person behind the addiction. The shame. The trauma. The loneliness. The damage drugs leave behind long before they touch the body.
+                    </p>
+                    
+                    <p class="story-para mt-4" data-aos="fade-up">
+                        So instead of chasing numbers, they started <strong>chasing answers.</strong>
+                    </p>
+
+                </div>
+            </div>
+
+            <hr class="story-divider">
+
+            <div class="row justify-content-center">
+                <div class="col-lg-9 text-center" data-aos="fade-up">
+                    <p class="story-para">
+                        They spent months talking to families, meeting recovering addicts, visiting failed cases, and slowly one truth became clear:
+                    </p>
+                    
+                    <h3 class="truth-text">
+                        People didn’t need another rehab.<br>
+                        They needed a place that believes in them when they no longer believe in themselves.
+                    </h3>
+                </div>
+            </div>
+
+            <div class="mission-grid-section mt-5">
+                <div class="text-center mb-5">
+                    <span class="green-tag">The Mission</span>
+                    <h3 class="chapter-title">To Rebuild Lives</h3>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="story-card">
+                            <div class="icon-box"><i class="fa-solid fa-hands-holding-circle"></i></div>
+                            <h5>Rebuild Lives</h5>
+                            <p>Not just treating bodies, but healing souls.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="story-card">
+                            <div class="icon-box"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+                            <h5>Return Sons</h5>
+                            <p>Giving families back their loved ones.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="story-card">
+                            <div class="icon-box"><i class="fa-regular fa-face-smile"></i></div>
+                            <h5>Restore Smiles</h5>
+                            <p>Bringing hope to those who haven't smiled in years.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                        <div class="story-card">
+                            <div class="icon-box"><i class="fa-solid fa-book-open-reader"></i></div>
+                            <h5>New Chapters</h5>
+                            <p>Reminding them: "Your story isn’t over yet."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-impact-box" data-aos="flip-up">
+                <div class="row align-items-center">
+                    
+                    <div class="col-lg-5 text-center text-lg-start mb-4 mb-lg-0 border-right-light">
+                        <div class="stat-group">
+                            <h1>1,400+</h1>
+                            <p>Lives Touched</p>
+                        </div>
+                        <div class="stat-group mt-4">
+                            <h1>300+</h1>
+                            <p>Successful Recoveries</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7 ps-lg-5 text-center text-lg-start">
+                        <h3 class="impact-title">It’s A Promise.</h3>
+                        <p class="impact-desc">
+                            We are still here — still fighting, still improving. Not because it’s easy, but because every recovered person becomes proof that change is real.
+                        </p>
+                        <p class="impact-highlight">
+                            To reverse the damage, restore dignity, and help every person take their life back from addiction.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+     
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script> AOS.init(); </script>
+</body>
+</html>
