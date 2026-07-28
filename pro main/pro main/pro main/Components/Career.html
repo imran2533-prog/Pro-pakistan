@@ -476,27 +476,31 @@ document.getElementById('careerForm').addEventListener('submit', async function(
         return;
     }
 
-    // Build FormData
+    // Build FormData for Formspree
     const formData = new FormData();
-    formData.append('fullName', fullName);
-    formData.append('email', email);
-    formData.append('phone', phone);
-    formData.append('position', position);
-    formData.append('message', message);
-    formData.append('cv', cvFile);
+    formData.append('Full Name', fullName);
+    formData.append('Email', email);
+    formData.append('Phone', phone);
+    formData.append('Position', position);
+    formData.append('Message', message);
+    formData.append('attachment', cvFile);
 
-    // Submit
+    // Submit to Formspree
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-2"></i> Sending...';
 
     try {
-        const res = await fetch('/api/apply', { method: 'POST', body: formData });
+        const res = await fetch('https://formspree.io/f/xyzepqvw', {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        });
         const data = await res.json();
-        if (res.ok && data.success) {
+        if (res.ok) {
             successMsg.style.display = 'block';
             document.getElementById('careerForm').reset();
         } else {
-            errorText.textContent = data.message || 'Submission failed. Please try again.';
+            errorText.textContent = (data.errors && data.errors[0].message) || 'Submission failed. Please try again.';
             errorMsg.style.display = 'block';
         }
     } catch (err) {
