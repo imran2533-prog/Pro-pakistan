@@ -1,10 +1,11 @@
 services:
   - type: web
     name: pakistan-recovery-oasis
-    env: static
-    staticPublishPath: .
-    buildCommand: ""
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false

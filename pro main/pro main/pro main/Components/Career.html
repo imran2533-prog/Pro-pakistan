@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Pakistan Recovery Oasis</title>
+    <link rel="icon" type="image/jpg" href="../Images/favv.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<style>
+:root {
+    --primary: #0a870e;
+    --secondary: #043102;
+    --accent: #f9a825;
+    --dark: #2d2d2d;
+    --light: #f4f9f4;
+    --font: 'Poppins', sans-serif;
+}
+
+.career-header {
+    height: 60vh;
+    min-height: 420px;
+    background: url('../Images/building.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 70px;
+}
+.career-header .overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(4, 49, 2, 0.72);
+}
+.career-header .content-box {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+.career-header h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+.career-subtitle {
+    display: block;
+    font-size: 0.95rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+</style>
+<style>
+.section-subtitle {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 8px;
+}
+.section-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--secondary);
+    margin-bottom: 15px;
+}
+
+/* Why Join Cards */
+.why-card {
+    background: white;
+    padding: 30px 22px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    border: 1px solid #e8f5e9;
+    height: 100%;
+    transition: 0.3s;
+}
+.why-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 0 16px 40px rgba(10,135,14,0.12);
+}
+.why-card .icon-box {
+    width: 58px; height: 58px;
+    background: var(--light);
+    color: var(--primary);
+    font-size: 22px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 18px;
+    transition: 0.3s;
+}
+.why-card:hover .icon-box { background: var(--primary); color: white; }
+.why-card h5 { font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+.why-card p { font-size: 0.9rem; color: #666; margin: 0; line-height: 1.6; }
+
+/* Application Form */
+.career-form-section {
+    background: var(--secondary);
+    padding: 90px 0;
+}
+.form-card {
+    background: white;
+    border-radius: 24px;
+    padding: 50px 45px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.2);
+}
+.form-label {
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--secondary);
+    margin-bottom: 6px;
+    font-family: 'Nunito', sans-serif;
+}
+.form-control, .form-select {
+    border: 1.5px solid #dce8dc;
+    border-radius: 10px;
+    padding: 11px 15px;
+    font-size: 0.92rem;
+    font-family: var(--font);
+    transition: 0.3s;
+    background-color: #fafffe;
+}
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(10,135,14,0.12);
+    outline: none;
+}
+.form-control.is-invalid, .form-select.is-invalid {
+    border-color: #dc3545;
+}
+.btn-submit {
+    background: var(--primary);
+    color: white;
+    padding: 13px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    transition: 0.3s;
+    box-shadow: 0 6px 20px rgba(10,135,14,0.3);
+    width: 100%;
+    letter-spacing: 0.5px;
+}
+.btn-submit:hover { background: var(--secondary); transform: translateY(-2px); }
+.btn-submit:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+
+.alert-success-custom {
+    background: #e8f5e9;
+    border: 1.5px solid var(--primary);
+    color: var(--secondary);
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-weight: 600;
+    display: none;
+}
+.alert-error-custom {
+    background: #ffeaea;
+    border: 1.5px solid #dc3545;
+    color: #c0392b;
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-weight: 600;
+    display: none;
+}
+.file-note {
+    font-size: 0.78rem;
+    color: #888;
+    margin-top: 5px;
+    font-family: 'Nunito', sans-serif;
+}
+
+@media (max-width: 991px) {
+    .career-header { background-attachment: scroll !important; height: 350px !important; min-height: auto !important; }
+    .career-header h1 { font-size: 2rem; }
+    .form-card { padding: 30px 20px; }
+    .section-title { font-size: 1.9rem; }
+}
+</style>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar custom-navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand logo-wrapper" href="../index.html">
+            <img src="../Images/logo.png" alt="PRO Logo" class="logo-img">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#careerMenu">
+            <span class="fa-solid fa-bars-staggered" style="color: var(--primary);"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="careerMenu">
+            <ul class="navbar-nav gap-lg-4 gap-2 align-items-center mt-3 mt-lg-0">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="./Clients.html" class="nav-link">Our Clients</a></li>
+                <li class="nav-item"><a href="./team.html" class="nav-link">Our Team</a></li>
+                <li class="nav-item"><a href="./Story.html" class="nav-link">Our Story</a></li>
+                <li class="nav-item"><a href="./packages.html" class="nav-link">Packages</a></li>
+                <li class="nav-item"><a href="./Career.html" class="nav-link active">Careers</a></li>
+                <li class="nav-item">
+                    <a href="./Gallary.html" class="btn-pro">Gallery</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ===== HERO HEADER ===== -->
+<header class="career-header">
+    <div class="overlay"></div>
+    <div class="container text-center content-box">
+        <span class="career-subtitle" data-aos="fade-down">Join Our Mission</span>
+        <h1 data-aos="zoom-in">Careers at PRO</h1>
+        <p class="fs-5 mt-2" data-aos="fade-up" style="opacity:0.9;">
+            Be part of Pakistan's leading addiction recovery team.
+        </p>
+    </div>
+</header>
+
+<!-- ===== INTRO SECTION ===== -->
+<section class="py-5 mb-3">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center" data-aos="fade-up">
+                <span class="section-subtitle">Who We Are</span>
+                <h2 class="section-title">Make a Real Difference</h2>
+                <p style="font-size:1.08rem; color:#555; line-height:1.8;">
+                    At <strong>Pakistan Recovery Oasis</strong>, we work at the intersection of compassion and clinical excellence.
+                    We treat addiction not just as a medical condition, but as a human crisis that needs skilled, empathetic professionals.
+                    If you believe in restoring dignity and rebuilding lives, we want <em>you</em> on our team.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== WHY JOIN US ===== -->
+<section class="pb-5 pt-2">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="section-subtitle">Reasons to Join</span>
+            <h2 class="section-title">Why Work With Us</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="why-card">
+                    <div class="icon-box"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <h5>Meaningful Work</h5>
+                    <p>Every day you help someone reclaim their life from addiction.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="why-card">
+                    <div class="icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h5>Continuous Learning</h5>
+                    <p>Regular training, workshops, and certifications provided.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="why-card">
+                    <div class="icon-box"><i class="fa-solid fa-users"></i></div>
+                    <h5>Collaborative Team</h5>
+                    <p>Work alongside experienced clinicians in a supportive environment.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                <div class="why-card">
+                    <div class="icon-box"><i class="fa-solid fa-chart-line"></i></div>
+                    <h5>Career Growth</h5>
+                    <p>Clear paths for advancement in Pakistan's growing mental health sector.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ===== APPLICATION FORM ===== -->
+<section class="career-form-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <span class="section-subtitle" style="color:#f9a825;">Apply Now</span>
+                    <h2 class="section-title" style="color:white;">Send Your Application</h2>
+                    <p style="color:rgba(255,255,255,0.75); font-size:0.95rem;">
+                        Fill in the form below and attach your CV. We'll get back to you within 3–5 business days.
+                    </p>
+                </div>
+                <div class="form-card" data-aos="fade-up" data-aos-delay="100">
+                    <form id="careerForm" novalidate>
+
+                        <!-- Name & Email -->
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Full Name <span class="text-danger">*</span></label>
+                                <input type="text" id="fullName" class="form-control" placeholder="e.g. Ahmed Khan" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Email Address <span class="text-danger">*</span></label>
+                                <input type="email" id="email" class="form-control" placeholder="you@example.com" required>
+                            </div>
+                        </div>
+
+                        <!-- Phone & Position -->
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Phone Number <span class="text-danger">*</span></label>
+                                <input type="tel" id="phone" class="form-control" placeholder="+92 3XX XXXXXXX" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Position Applying For <span class="text-danger">*</span></label>
+                                <select id="position" class="form-select" required>
+                                    <option value="" disabled selected>-- Select Position --</option>
+                                    <option value="Counselor">Counselor</option>
+                                    <option value="Nurse">Nurse</option>
+                                    <option value="Admin Staff">Admin Staff</option>
+                                    <option value="Support Staff">Support Staff</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Cover Letter -->
+                        <div class="mb-3">
+                            <label class="form-label">Cover Letter / Message <span style="color:#aaa;">(optional)</span></label>
+                            <textarea id="message" class="form-control" rows="4"
+                                placeholder="Tell us why you want to join Pakistan Recovery Oasis..."></textarea>
+                        </div>
+
+                        <!-- CV Upload -->
+                        <div class="mb-4">
+                            <label class="form-label">Upload CV <span class="text-danger">*</span></label>
+                            <input type="file" id="cvFile" class="form-control" accept=".pdf,.doc,.docx" required>
+                            <p class="file-note"><i class="fa-solid fa-circle-info me-1"></i>Accepted formats: PDF, DOC, DOCX — Max size: 5MB</p>
+                        </div>
+
+                        <!-- Feedback Messages -->
+                        <div id="successMsg" class="alert-success-custom mb-3">
+                            <i class="fa-solid fa-circle-check me-2"></i>
+                            Your application has been submitted successfully! We'll contact you soon.
+                        </div>
+                        <div id="errorMsg" class="alert-error-custom mb-3">
+                            <i class="fa-solid fa-circle-xmark me-2"></i>
+                            <span id="errorText">Something went wrong. Please try again.</span>
+                        </div>
+
+                        <!-- Submit -->
+                        <button type="submit" class="btn-submit" id="submitBtn">
+                            <i class="fa-solid fa-paper-plane me-2"></i> Submit Application
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ===== FOOTER ===== -->
+<footer style="background:#043102; color:#d1fae5; font-family:'Poppins',sans-serif; padding:60px 0 0;">
+    <div style="max-width:1200px; margin:0 auto; padding:0 24px;">
+        <div style="display:grid; grid-template-columns:2fr 1fr 1.5fr; gap:40px; flex-wrap:wrap;">
+            <div>
+                <a href="../index.html" style="font-size:1.6rem; font-weight:800; color:#F9A825; text-decoration:none; display:inline-block; margin-bottom:14px; letter-spacing:2px;">PRO</a>
+                <p style="font-size:0.88rem; line-height:1.7; color:#a7f3d0; margin-bottom:18px;">
+                    Pakistan Recovery Oasis provides expert mental health recovery, addiction treatment, and psychological counseling in a safe environment.
+                </p>
+                <div style="display:flex; gap:10px;">
+                    <a href="https://www.facebook.com/Pakistanrecoveryoasis" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:#F9A825;text-decoration:none;"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/pakistan.recovery.oasispro" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:#F9A825;text-decoration:none;"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@PakistanRecoveryOasis" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:#F9A825;text-decoration:none;"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 style="font-size:1rem;font-weight:700;color:#F9A825;margin-bottom:18px;text-transform:uppercase;letter-spacing:1px;">Quick Links</h4>
+                <ul style="list-style:none;padding:0;margin:0;">
+                    <li style="margin-bottom:10px;"><a href="../index.html" style="color:#a7f3d0;text-decoration:none;font-size:0.88rem;">Home</a></li>
+                    <li style="margin-bottom:10px;"><a href="./team.html" style="color:#a7f3d0;text-decoration:none;font-size:0.88rem;">Our Team</a></li>
+                    <li style="margin-bottom:10px;"><a href="./Story.html" style="color:#a7f3d0;text-decoration:none;font-size:0.88rem;">Our Story</a></li>
+                    <li style="margin-bottom:10px;"><a href="./packages.html" style="color:#a7f3d0;text-decoration:none;font-size:0.88rem;">Packages</a></li>
+                    <li style="margin-bottom:10px;"><a href="./Career.html" style="color:#F9A825;text-decoration:none;font-size:0.88rem;font-weight:600;">Careers</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="font-size:1rem;font-weight:700;color:#F9A825;margin-bottom:18px;text-transform:uppercase;letter-spacing:1px;">Contact</h4>
+                <ul style="list-style:none;padding:0;margin:0;">
+                    <li style="display:flex;align-items:flex-start;gap:10px;color:#a7f3d0;font-size:0.85rem;margin-bottom:12px;">
+                        <i class="fa-solid fa-phone" style="color:#F9A825;margin-top:3px;"></i>
+                        <a href="tel:+923399123489" style="color:#a7f3d0;text-decoration:none;">+92 339 9123489</a>
+                    </li>
+                    <li style="display:flex;align-items:flex-start;gap:10px;color:#a7f3d0;font-size:0.85rem;margin-bottom:12px;">
+                        <i class="fa-solid fa-envelope" style="color:#F9A825;margin-top:3px;"></i>
+                        <a href="mailto:pakistanrecoveryoasis@gmail.com" style="color:#a7f3d0;text-decoration:none;">pakistanrecoveryoasis@gmail.com</a>
+                    </li>
+                    <li style="display:flex;align-items:flex-start;gap:10px;color:#a7f3d0;font-size:0.85rem;">
+                        <i class="fa-solid fa-location-dot" style="color:#F9A825;margin-top:3px;"></i>
+                        <span>Lahore, Punjab, Pakistan</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div style="margin-top:40px;border-top:1px solid rgba(255,255,255,0.1);padding:20px 0;text-align:center;font-size:0.82rem;color:#6ee7b7;">
+            &copy; 2025 Pakistan Recovery Oasis. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/923399123489" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ once: true });</script>
+
+<script>
+document.getElementById('careerForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const fullName = document.getElementById('fullName').value.trim();
+    const email    = document.getElementById('email').value.trim();
+    const phone    = document.getElementById('phone').value.trim();
+    const position = document.getElementById('position').value;
+    const message  = document.getElementById('message').value.trim();
+    const cvFile   = document.getElementById('cvFile').files[0];
+
+    const successMsg = document.getElementById('successMsg');
+    const errorMsg   = document.getElementById('errorMsg');
+    const errorText  = document.getElementById('errorText');
+    const submitBtn  = document.getElementById('submitBtn');
+
+    // Hide previous messages
+    successMsg.style.display = 'none';
+    errorMsg.style.display   = 'none';
+
+    // Basic validation
+    let valid = true;
+    ['fullName','email','phone','position','cvFile'].forEach(id => {
+        document.getElementById(id).classList.remove('is-invalid');
+    });
+
+    if (!fullName) { document.getElementById('fullName').classList.add('is-invalid'); valid = false; }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { document.getElementById('email').classList.add('is-invalid'); valid = false; }
+    if (!phone) { document.getElementById('phone').classList.add('is-invalid'); valid = false; }
+    if (!position) { document.getElementById('position').classList.add('is-invalid'); valid = false; }
+    if (!cvFile) { document.getElementById('cvFile').classList.add('is-invalid'); valid = false; }
+
+    if (!valid) {
+        errorText.textContent = 'Please fill all required fields correctly.';
+        errorMsg.style.display = 'block';
+        return;
+    }
+
+    // File type & size check
+    const allowed = ['application/pdf','application/msword','application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+    if (!allowed.includes(cvFile.type)) {
+        document.getElementById('cvFile').classList.add('is-invalid');
+        errorText.textContent = 'Only PDF, DOC, or DOCX files are allowed.';
+        errorMsg.style.display = 'block';
+        return;
+    }
+    if (cvFile.size > 5 * 1024 * 1024) {
+        document.getElementById('cvFile').classList.add('is-invalid');
+        errorText.textContent = 'CV file must be under 5MB.';
+        errorMsg.style.display = 'block';
+        return;
+    }
+
+    // Build FormData
+    const formData = new FormData();
+    formData.append('fullName', fullName);
+    formData.append('email', email);
+    formData.append('phone', phone);
+    formData.append('position', position);
+    formData.append('message', message);
+    formData.append('cv', cvFile);
+
+    // Submit
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-2"></i> Sending...';
+
+    try {
+        const res = await fetch('/api/apply', { method: 'POST', body: formData });
+        const data = await res.json();
+        if (res.ok && data.success) {
+            successMsg.style.display = 'block';
+            document.getElementById('careerForm').reset();
+        } else {
+            errorText.textContent = data.message || 'Submission failed. Please try again.';
+            errorMsg.style.display = 'block';
+        }
+    } catch (err) {
+        errorText.textContent = 'Network error. Please check your connection.';
+        errorMsg.style.display = 'block';
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane me-2"></i> Submit Application';
+    }
+});
+</script>
+</body>
+</html>
